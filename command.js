@@ -73,6 +73,12 @@ const yargs = require('yargs')
     type: 'string',
     default: defaults.tagPrefix
   })
+  .option('tag-suffix', {
+    alias: 't',
+    describe: 'Set a custom prefix for the git tag to be created',
+    type: 'string',
+    default: defaults.tagSuffix
+  })
   .option('release-count', {
     describe: 'How many releases of changelog you want to generate. It counts from the upcoming release. Useful when you forgot to generate any previous changelog. Set to 0 to regenerate all.',
     type: 'number',
