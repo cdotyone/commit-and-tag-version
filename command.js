@@ -75,7 +75,7 @@ const yargs = require('yargs')
   })
   .option('tag-suffix', {
     alias: 't',
-    describe: 'Set a custom prefix for the git tag to be created',
+    describe: 'Set a custom suffix for the git tag to be created',
     type: 'string',
     default: defaults.tagSuffix
   })

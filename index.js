@@ -81,11 +81,8 @@ module.exports = async function standardVersion (argv) {
       throw new Error('no package file found')
     }
 
-    let newVersion = await bump(args, version)
+    const newVersion = await bump(args, version)
     if (!newVersion) return
-    if (args.tagSuffix) {
-      newVersion += '-' + args.tagSuffix
-    }
     await changelog(args, newVersion)
     await commit(args, newVersion)
     await tag(newVersion, pkg ? pkg.private : false, args)
